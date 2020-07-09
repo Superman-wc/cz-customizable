@@ -47,9 +47,9 @@ module.exports = {
     const messages = config.messages || {};
     const skipQuestions = config.skipQuestions || [];
 
-    messages.type = messages.type || "Select the type of change that you're committing:";
-    messages.scope = messages.scope || '\nDenote the SCOPE of this change (optional):';
-    messages.customScope = messages.customScope || 'Denote the SCOPE of this change:';
+    messages.type = messages.type || "选择要提交的更改类型:";
+    messages.scope = messages.scope || '\n输入此更改的范围（可选）:';
+    messages.customScope = messages.customScope || '输入此更改的范围:';
     if (!messages.ticketNumber) {
       if (config.ticketNumberRegExp) {
         messages.ticketNumber =
@@ -59,12 +59,12 @@ module.exports = {
         messages.ticketNumber = 'Enter the ticket number:\n';
       }
     }
-    messages.subject = messages.subject || 'Write a SHORT, IMPERATIVE tense description of the change:\n';
+    messages.subject = messages.subject || '写一个简短的改变描述:\n';
     messages.body =
-      messages.body || 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n';
-    messages.breaking = messages.breaking || 'List any BREAKING CHANGES (optional):\n';
-    messages.footer = messages.footer || 'List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:\n';
-    messages.confirmCommit = messages.confirmCommit || 'Are you sure you want to proceed with the commit above?';
+      messages.body || '提供更改的详细说明（可选）。使用“|”换行:\n';
+    messages.breaking = messages.breaking || '列出任何中断更改（可选）:\n';
+    messages.footer = messages.footer || '列出此更改关闭的所有问题（可选）. 例如: #31, #34:\n';
+    messages.confirmCommit = messages.confirmCommit || '是否确实要继续上面的提交?';
 
     let questions = [
       {
@@ -177,9 +177,9 @@ module.exports = {
         type: 'expand',
         name: 'confirmCommit',
         choices: [
-          { key: 'y', name: 'Yes', value: 'yes' },
-          { key: 'n', name: 'Abort commit', value: 'no' },
-          { key: 'e', name: 'Edit message', value: 'edit' },
+          { key: 'y', name: '确定提交', value: 'yes' },
+          { key: 'n', name: '终止提交', value: 'no' },
+          { key: 'e', name: '编辑', value: 'edit' },
         ],
         default: 0,
         message(answers) {
